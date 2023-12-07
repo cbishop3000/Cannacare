@@ -1,0 +1,19 @@
+.top-strains {
+    display: flex;
+    border-radius: 6px;
+    backdrop-filter: blur(1px)
+}
+
+.glass-button {
+    padding: 10px 20px;
+    background: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.glass-button:hover {
+    background: #2980b9;
+}

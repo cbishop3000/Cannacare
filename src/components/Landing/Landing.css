@@ -1,0 +1,10 @@
+.signup-buttons {
+    width: 30%;
+    background-color: white;
+    margin: auto;
+    padding: 10px;
+    margin-top: 60px;
+    border-radius: 5px;
+    justify-content: space-between;
+    display: flex;
+}

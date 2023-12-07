@@ -1,0 +1,96 @@
+.profile-container {
+    background: rgba(255, 255, 255, 0.2); /* Transparent white background */
+  border-radius: 15px;
+  padding: 20px;
+  backdrop-filter: blur(1px); /* Apply a blur effect to the background */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+  /* width: 300px;
+  height: 200px; */
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-picture {
+    height: 150px;
+    width: 150px;
+    margin: auto;
+    background-color: aliceblue;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 0px #464646;
+    float: left;
+    display: flex;
+    padding: 10px;
+    margin: 25px;
+}
+
+.main-image {
+    border-radius: 10px;
+}
+
+.name {
+    font-size: large;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.graph-container-strains {
+    height: 50px;
+    font-size: 32px;
+    color: white;
+    width: 100%;
+    background-color: black;
+}
+
+.strain-dropdown {
+    text-align: center;
+    display: flex;
+}
+
+.top-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.break-line {
+    color: black;
+    height: 2px
+}
+
+.functional-section {
+    display: flex;
+    margin: auto;
+    width: 90%;
+}
+
+.recommendation-section {
+    margin: auto;
+    width: 90%;
+    /* height: 200px; */
+}
+
+.button-margins {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.strains-list {
+    text-decoration: none;
+}
+
+.graph-section {
+    display: flex;
+    justify-content: space-around;
+}
+
+.second-section {
+    display: flex;
+}
+
+.popup-content {
+    border-radius: 5px !important;
+    border: none !important;
+}

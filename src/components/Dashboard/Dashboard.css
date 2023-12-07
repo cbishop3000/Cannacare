@@ -1,0 +1,13 @@
+.admin-buttons {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.admin-controls-container {
+    height: 500px;
+}
+
+.admin-button {
+    margin: 20px;
+}

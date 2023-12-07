@@ -1,0 +1,51 @@
+body {
+    background-color: #014638;
+}
+
+.custom-navbar {
+    background: rgba(255, 255, 255, 0.2);
+    height: 75px;
+    box-shadow: 0px 2px 2px #464646;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.custom-input {
+    width: 80%;
+    justify-content: center;
+    display: flex;
+    margin: auto;
+}
+
+.nav-title {
+    font-size: 26px;
+    font-weight: 500;
+    display: flex;
+    width: 80%;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.links {
+    float: left;
+    width: 100%;
+    justify-content: space-between;
+    display: inherit;
+}
+
+.single-link {
+    font-size: 18px;
+    margin: auto;
+    float: left;
+    margin-top: 15px;
+}
+
+.terpene-title {
+    text-decoration: none !important;
+    color: white;
+}
+
+.shop-icon {
+    color: white;
+}
