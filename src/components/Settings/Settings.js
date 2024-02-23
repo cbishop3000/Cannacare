@@ -10,7 +10,6 @@ const Settings = () => {
 
   return (
     <div className='parent-contrainer'>
-        <Navbar />
         <div className="container mt-3">
             <div className="row gutters">
                 <div className="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">

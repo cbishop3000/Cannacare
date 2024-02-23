@@ -8,3 +8,13 @@
     justify-content: space-between;
     display: flex;
 }
+
+/* .form-control {
+    width: 50%;
+    margin: auto;
+} */
+
+.form-group {
+    width: 50%;
+    margin: auto;
+}

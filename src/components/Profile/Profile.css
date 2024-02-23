@@ -24,6 +24,7 @@
     display: flex;
     padding: 10px;
     margin: 25px;
+    justify-content: center;
 }
 
 .main-image {
@@ -93,4 +94,22 @@
 .popup-content {
     border-radius: 5px !important;
     border: none !important;
+}
+
+.add-icon {
+    width: 70px;
+    position: absolute;
+    cursor: pointer;
+    top: 85px;
+}
+
+.input-image {
+    margin: auto;
+    cursor: pointer;
+    z-index: 3;
+    color: rgba(0, 0, 0, 0)
+}
+
+.input-image::-webkit-file-upload-button {
+    visibility: hidden;
 }

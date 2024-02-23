@@ -1,18 +1,23 @@
 import React, { useState, useEffect, useContext } from 'react'
 import './Profile.css'
 import axios from "axios"
-import profileImage from '../images/profilepic.jpg'
+
+import 'firebase/storage';
+import { storage } from '../Firebase/firebase.js'
+import { ref, uploadBytes } from "firebase/storage"
 
 import StrainSelection from '../StrainSelection/StrainSelection'
-import Navbar from '../Navbar/Navbar'
 import Loading from '../Loading/Loading'
 import Graph from '../Graph/Graph'
 import Preferences from '../Preferences/Preferences'
 import Popup from "reactjs-popup";
 import UserContext from '../../context/UserContext';
+import { useNavigate } from 'react-router-dom'
 
 import {Chart, ArcElement} from 'chart.js'
 import Recommendation from '../Recommendation/Recommendation'
+
+import uploadIcon from '../../icons/plus-circle-fill.svg';
 
 Chart.register(ArcElement);
 
@@ -20,13 +25,37 @@ const Profile = () => {
   const { userData, setUserData } = useContext(UserContext)
   const [strains, setStrains] = useState([])
   const [preferences, setPreferences] = useState([])
+  //Navigation
+  const navigate = useNavigate();
+
+  //image handling
+  const [image, setImage] = useState(null);
+
+  const handleUpload = () => {
+	if (image) {
+	  const storageRef = ref(storage, `images/${image.name}`);
+	  
+	  uploadBytes(storageRef, image).then(() => {
+		console.log('Image uploaded successfully!');
+	  }).catch((error) => {
+		console.error('Error uploading image:', error);
+	  });
+	}
+  };
+
+  const handleFileChange = (e) => {
+    if (e.target.files[0]) {
+      setImage(e.target.files[0]);
+    }
+  };
 
   const result = []
+
+  //Used later to check for logged in user
   const userId = localStorage.getItem("userId")
 
   async function fetchStrains() {
     let strainData = await axios.get(`${process.env.REACT_APP_API_URL}/strains/products`)
-    
     setStrains(strainData.data)
   }
 
@@ -178,20 +207,30 @@ const Profile = () => {
 	};
   
   useEffect(() => {
-      fetchStrains()
-      fetchPreferences()
+	if(!userId) {
+		navigate("/")
+	} else {
+		fetchStrains()
+		fetchPreferences()
+	}
   }, [])
   return (
   <div>
-    <Navbar />
     <div className='profile-container mt-5'>
       <div className='top-container'>
         <div className='profile-picture'>
+			<input 
+				type="file" 
+				onChange={handleFileChange}
+				className='input-image' 
+				title=" "
+			/>
             <img 
-                src={profileImage} 
-                className="main-image"
+                src={uploadIcon}
+                className="add-icon"
             />
         </div>
+		<button className='btn btn-primary' onClick={handleUpload}>Upload</button>
         <Preferences 
           strains={preferences}
         />

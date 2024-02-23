@@ -57,14 +57,14 @@ const Login = () => {
                 <div className="form-group">
                     <label htmlFor="password">Password</label>
                     <input
-                        type="text"
+                        type="password"
                         className="form-control"
                         name="password"
                         onChange={onChange}
                         placeholder="Enter password"
                     />
                 </div>
-                <div>
+                <div className="form-group">
                     <button type="submit" className="btn btn-primary submit mt-2">
                         Submit
                     </button>

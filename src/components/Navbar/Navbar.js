@@ -8,6 +8,7 @@ import UserContext from '../../context/UserContext';
 
 const Navbar = () => {
   const { userData, setUserData } = useContext(UserContext)
+  const currentUser = localStorage.getItem("userId");
   const navigate = useNavigate();
 
   const logout = () => {
@@ -16,18 +17,19 @@ const Navbar = () => {
         user: undefined,
     });
 
-    localStorage.setItem("auth-token", "");
+    localStorage.clear();
     navigate("/")
   }
 
   useEffect(() => {
-    
-  }, [])
+    console.log(userData)
+    console.log(currentUser)
+  }, [userData])
 
   return (
       <div className="custom-navbar">
         <div className='nav-title pt-3'>
-          {userData.token ? (
+          {currentUser ? (
             <div>
               <button className='btn btn-danger m-0' onClick={logout}>Logout</button>
             </div>
@@ -60,9 +62,6 @@ const Navbar = () => {
             
           </div>
         </div>
-        
-        {/* <hr className='nav-divider'/> */}
-        
       </div>
   )
 }

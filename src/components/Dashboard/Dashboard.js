@@ -22,7 +22,6 @@ const Dashboard = () => {
     
   return (
     <div className='admin-controls-container'>
-        <Navbar />
         <div className='admin-buttons'>
             <Popup
                 modal
